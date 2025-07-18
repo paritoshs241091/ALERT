@@ -307,9 +307,7 @@ def my_code_60():
 	Z = pd.DataFrame()
 	filtered_ce_today = pd.DataFrame()
 	filtered_pe_today = pd.DataFrame()
-
-    	cmp_data = {}
-
+	cmp_data = {}
 	# Loop through symbols
 	for symbol in all_symbols:
 	  try:
