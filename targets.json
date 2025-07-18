@@ -26,13 +26,6 @@
             "triggered": false
         }
     ],
-    "NSE:TCS-EQ": [
-        {
-            "price": 3190,
-            "comment": "hehe",
-            "triggered": false
-        }
-    ],
     "NSE:WSTCSTPAPR-EQ": [
         {
             "price": 558,
