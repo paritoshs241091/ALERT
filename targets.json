@@ -9,6 +9,11 @@
             "price": 2500,
             "comment": "buy",
             "triggered": false
+        },
+        {
+            "price": 2500,
+            "comment": "hehe",
+            "triggered": false
         }
     ],
     "NSE:WSTCSTPAPR-EQ": [
