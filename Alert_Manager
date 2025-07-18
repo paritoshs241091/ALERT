@@ -308,6 +308,8 @@ def my_code_60():
 	filtered_ce_today = pd.DataFrame()
 	filtered_pe_today = pd.DataFrame()
 
+    cmp_data = {}
+
 	# Loop through symbols
 	for symbol in all_symbols:
 	  try:
@@ -529,6 +531,10 @@ class AlertManager:
         self._save_targets()
 
         # Agar alerts aaye hain to DataFrame banao
+        if not alert_rows:
+            print("No alerts triggered this minute.")
+            return  # Agar koi alert nahi hai to function yahin stop
+
         if alert_rows:
             df = pd.DataFrame(alert_rows, columns=["date", "buy", "sell", "others"])
             self._send_alert_image(df)
@@ -587,7 +593,8 @@ def execute_script():
 	
         if (current_second == 0):
             print("start time:", datetime.datetime.now().strftime("%H:%M:%S"))
-            my_code_60()
+            cmp_data = my_code_60()
+            manager.check_alerts_with_cmp(cmp_data)  # CMP ke saath check karo
             print("end time:", datetime.datetime.now().strftime("%H:%M:%S"))
             time.sleep(30)
         time.sleep(1)
