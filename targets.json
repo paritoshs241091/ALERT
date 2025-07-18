@@ -38,6 +38,11 @@
             "price": 3190,
             "comment": "hehe",
             "triggered": false
+        },
+        {
+            "price": 558,
+            "comment": "sell",
+            "triggered": false
         }
     ]
 }
