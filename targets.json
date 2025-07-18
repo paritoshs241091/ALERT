@@ -21,13 +21,6 @@
             "triggered": false
         }
     ],
-    "NSE:WSTCSTPAPR-EQ": [
-        {
-            "price": 4000,
-            "comment": "orderblock",
-            "triggered": false
-        }
-    ],
     "NSE:TCS-EQ": [
         {
             "price": 4000,
