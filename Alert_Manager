@@ -522,8 +522,8 @@ class AlertManager:
                 else:
                     remaining_prices.append(target)
 
-                if remaining_prices:
-                updated_targets[symbol] = remaining_prices
+            if remaining_prices:
+            updated_targets[symbol] = remaining_prices
 
         self.targets = updated_targets
         self._save_targets()
