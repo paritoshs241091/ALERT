@@ -5,6 +5,16 @@
             "triggered": true
         }
     ],
-    "NSE:TCS-EQ": [],
-    "NSE:WSTCSTPAPR-EQ": []
+    "NSE:TCS-EQ": [
+        {
+            "price": 4000,
+            "triggered": false
+        }
+    ],
+    "NSE:WSTCSTPAPR-EQ": [
+        {
+            "price": 4000,
+            "triggered": false
+        }
+    ]
 }
