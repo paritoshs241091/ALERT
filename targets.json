@@ -3,6 +3,10 @@
         {
             "price": 4000,
             "triggered": false
+        },
+        {
+            "price": 800,
+            "triggered": false
         }
     ],
     "NSE:RELIANCE-EQ": [
@@ -14,6 +18,10 @@
     "NSE:TCS-EQ": [
         {
             "price": 4000,
+            "triggered": false
+        },
+        {
+            "price": 800,
             "triggered": false
         }
     ]
