@@ -1,0 +1,9 @@
+{
+    "NSE:RELIANCE-EQ": [
+        {
+            "price": 2500,
+            "comment": "buy",
+            "triggered": false
+        }
+    ]
+}
