@@ -525,7 +525,7 @@ class AlertManager:
                     remaining_prices.append(target)
 
             if remaining_prices:
-            updated_targets[symbol] = remaining_prices
+                updated_targets[symbol] = remaining_prices
 
         self.targets = updated_targets
         self._save_targets()
@@ -534,10 +534,8 @@ class AlertManager:
         if not alert_rows:
             print("No alerts triggered this minute.")
             return  # Agar koi alert nahi hai to function yahin stop
-
-        if alert_rows:
-            df = pd.DataFrame(alert_rows, columns=["date", "buy", "sell", "others"])
-            self._send_alert_image(df)
+        df = pd.DataFrame(alert_rows, columns=["date", "buy", "sell", "others"])
+        self._send_alert_image(df)
 
     def _send_alert_image(self, df):
         # DataFrame ko table me convert karo
@@ -562,13 +560,13 @@ class AlertManager:
         )
         print("Telegram response:", resp.status_code)
 
-    manager = AlertManager(
-        github_user="paritoshs241091",
-        github_repo="ALERT",
-        github_token="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",
-        email="you@example.com",
-        name="Your Name"
-    )
+manager = AlertManager(
+    github_user="paritoshs241091",
+    github_repo="ALERT",
+    github_token="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",
+    email="you@example.com",
+    name="Your Name"
+)
     
     # Add targets
     #manager.add_target("RELIANCE", 1474, "buy")
@@ -584,7 +582,8 @@ class AlertManager:
     #cmp_data = {"NSE:RELIANCE-EQ": 2501}
     #manager.check_alerts_with_cmp(cmp_data)
 
-my_code_60()
+cmp_data = my_code_60()
+manager.check_alerts_with_cmp(cmp_data)  # CMP ke saath check karo
 def execute_script():
     while True:
         current_time = datetime.datetime.now()
