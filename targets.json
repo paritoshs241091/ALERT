@@ -32,5 +32,12 @@
             "comment": "hehe",
             "triggered": false
         }
+    ],
+    "NSE:WSTCSTPAPR-EQ": [
+        {
+            "price": 558,
+            "comment": "sell",
+            "triggered": false
+        }
     ]
 }
