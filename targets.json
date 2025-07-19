@@ -73,5 +73,12 @@
             "comment": "BUY",
             "triggered": false
         }
+    ],
+    "NSE:KOTAKBANK-EQ": [
+        {
+            "price": 2133.5,
+            "comment": "BUY",
+            "triggered": false
+        }
     ]
 }
