@@ -21,13 +21,24 @@ class AlertManager:
         self.symbols = self._load_symbols()
         self.targets = self._load_targets()
 
-    # ----------------------- Repo & File Setup -----------------------
+    # ----------------------- Repo Setup -----------------------
     def _setup_repo(self):
         if os.path.exists(self.github_repo):
-            os.system(f"cd {self.github_repo} && git pull")
+            os.system(f"cd {self.github_repo} && git pull origin main")
         else:
             os.system(f"git clone {self.repo_url}")
 
+    def _commit_and_push(self, message):
+        os.chdir(self.repo_path)
+        os.system(f'git config --global user.email "{self.email}"')
+        os.system(f'git config --global user.name "{self.name}"')
+        os.system("git add targets.json symbols.json")
+        os.system(f'git commit -m "{message}" || echo "No changes to commit"')
+        os.system("git pull origin main --rebase || true")
+        os.system("git push origin main")
+        os.chdir("..")
+
+    # ----------------------- Load/Save -----------------------
     def _load_symbols(self):
         if not os.path.exists(self.symbols_file):
             print("symbols.json not found. Fetching latest symbols...")
@@ -46,15 +57,6 @@ class AlertManager:
             json.dump(self.targets, f, indent=4)
         self._commit_and_push("Updated targets.json")
 
-    def _commit_and_push(self, message):
-        os.chdir(self.repo_path)
-        os.system(f'git config --global user.email "{self.email}"')
-        os.system(f'git config --global user.name "{self.name}"')
-        os.system("git add targets.json")
-        os.system(f'git commit -m "{message}" || echo "No changes to commit"')
-        os.system(f"git push {self.repo_url} main")
-        os.chdir("/content")
-
     # ----------------------- Symbols Update -----------------------
     def update_symbols(self):
         url = "https://public.fyers.in/sym_details/NSE_CM.csv"
@@ -62,7 +64,7 @@ class AlertManager:
         if response.status_code == 200:
             df = pd.read_csv(StringIO(response.text), header=None)
             raw_symbols = df[9].dropna().tolist()
-            eq_symbols = sorted([s for s in raw_symbols if s.endswith("-EQ")])
+            eq_symbols = sorted([f"NSE:{s}" for s in raw_symbols if s.endswith("-EQ")])
             with open(self.symbols_file, "w") as f:
                 json.dump(eq_symbols, f, indent=4)
             self.symbols = eq_symbols
@@ -73,7 +75,8 @@ class AlertManager:
 
     # ----------------------- Target Management -----------------------
     def add_target(self, pattern, price, comment=""):
-        matched = [s for s in self.symbols if re.search(f":{pattern}", s, re.IGNORECASE)]
+        # Find full NSE symbol name from pattern
+        matched = [s for s in self.symbols if re.search(pattern, s, re.IGNORECASE)]
         if not matched:
             print(f"No stock matched for pattern: {pattern}")
             return
@@ -96,7 +99,7 @@ class AlertManager:
         self._save_targets()
 
     def remove_target(self, pattern, price):
-        matched = [s for s in self.targets.keys() if re.search(f":{pattern}", s, re.IGNORECASE)]
+        matched = [s for s in self.targets.keys() if re.search(pattern, s, re.IGNORECASE)]
         if not matched:
             print(f"No stock matched for pattern: {pattern}")
             return
@@ -119,38 +122,7 @@ class AlertManager:
     def show_targets(self, pattern=None):
         matched = self.targets if not pattern else {
             s: v for s, v in self.targets.items()
-            if re.search(f":{pattern}", s, re.IGNORECASE)
+            if re.search(pattern, s, re.IGNORECASE)
         }
         print(json.dumps(matched, indent=4))
-
-    # ----------------------- Alerts Check (External CMP) -----------------------
-    def check_alerts_with_cmp(self, cmp_data, tolerance=0.2):
-        """
-        Check all targets based on provided CMP data.
-        cmp_data: {"NSE:RELIANCE-EQ": 2498, "NSE:TCS-EQ": 4002}
-        Automatically removes targets if hit.
-        """
-        print("\n--- Checking Alerts with External CMP ---")
-        updated_targets = {}
-
-        for symbol, price_list in self.targets.items():
-            if symbol not in cmp_data:
-                print(f"CMP not provided for {symbol}, skipping.")
-                updated_targets[symbol] = price_list
-                continue
-
-            cmp = cmp_data[symbol]
-            remaining_prices = []
-            for target in price_list:
-                diff = abs((cmp - target["price"]) / target["price"]) * 100
-                if diff <= tolerance:
-                    print(f"ALERT: {symbol} [{target.get('comment', '').upper()}] hit target {target['price']} (CMP={cmp})")
-                else:
-                    remaining_prices.append(target)
-
-            if remaining_prices:
-                updated_targets[symbol] = remaining_prices
-
-        self.targets = updated_targets
-        self._save_targets()
 
