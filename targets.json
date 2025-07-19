@@ -147,5 +147,12 @@
             "comment": "sell",
             "triggered": false
         }
+    ],
+    "NSE:BRITANNIA-EQ": [
+        {
+            "price": 5613,
+            "comment": "BUY",
+            "triggered": false
+        }
     ]
 }
