@@ -1,11 +1,6 @@
 {
     "NSE:WIPRO-EQ": [
         {
-            "price": 266.35,
-            "comment": "buy",
-            "triggered": false
-        },
-        {
             "price": 266,
             "comment": "buy",
             "triggered": false
@@ -19,11 +14,6 @@
         }
     ],
     "NSE:ADANIPORTS-EQ": [
-        {
-            "price": 1441,
-            "comment": "sell",
-            "triggered": false
-        },
         {
             "price": 1440,
             "comment": "buy",
