@@ -240,8 +240,10 @@ class AlertManager:
         self.targets = self._load_targets()
 
     def _setup_repo(self):
+        # Public repo ke liye token ki zarurat nahi
+        self.repo_url = f"https://github.com/{self.github_user}/{self.github_repo}.git"       
         if os.path.exists(self.github_repo):
-            os.system(f"cd {self.github_repo} && git pull")
+            os.system(f"cd {self.github_repo} && git fetch origin && git rebase origin/main || git merge origin/main")
         else:
             os.system(f"git clone {self.repo_url}")
 
