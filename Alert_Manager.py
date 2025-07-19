@@ -262,9 +262,24 @@ class AlertManager:
         return {}
 
     def _save_targets(self):
-        with open(self.targets_file, "w") as f:
-            json.dump(self.targets, f, indent=4)
-        self._commit_and_push("Updated targets.json")
+        # Step 1: Always pull latest before saving
+        os.chdir(self.repo_path)
+        os.system("git pull origin main --rebase --autostash || true")
+        os.chdir("/content")
+        # Step 2: Merge current targets with latest targets.json
+        if os.path.exists(self.targets_file):
+            with open(self.targets_file, "r") as f:
+                latest_targets = json.load(f)
+            # Merge data (avoid overwriting)
+            for symbol, target_list in self.targets.items():
+                if symbol not in latest_targets:
+                    latest_targets[symbol] = target_list
+                else:
+                    for t in target_list:
+                        if t not in latest_targets[symbol]:
+                            latest_targets[symbol].append(t)
+            self.targets = latest_targets
+
 
     def _commit_and_push(self, message):
         os.chdir(self.repo_path)
