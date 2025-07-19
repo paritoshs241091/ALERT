@@ -12,5 +12,11 @@
             "comment": "hehe",
             "triggered": false
         }
+    ],
+    "bhel": [
+        {
+            "price": 250.2,
+            "comment": "sell"
+        }
     ]
 }
