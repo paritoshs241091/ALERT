@@ -38,5 +38,12 @@
             "comment": "hehe",
             "triggered": false
         }
+    ],
+    "NSE:RELIANCE-EQ": [
+        {
+            "price": 250.2,
+            "comment": "sell",
+            "triggered": false
+        }
     ]
 }
