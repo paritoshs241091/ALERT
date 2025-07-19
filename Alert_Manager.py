@@ -262,75 +262,19 @@ class AlertManager:
         return {}
 
     def _save_targets(self):
-        # Step 1: Always pull latest before saving
-        os.chdir(self.repo_path)
-        os.system("git pull origin main --rebase --autostash || true")
-        os.chdir("/content")
-    
-        # Step 2: Merge current targets with latest targets.json
-        if os.path.exists(self.targets_file):
-            with open(self.targets_file, "r") as f:
-                latest_targets = json.load(f)
-            # Merge data (avoid overwriting)
-            for symbol, target_list in self.targets.items():
-                if symbol not in latest_targets:
-                    latest_targets[symbol] = target_list
-                else:
-                    for t in target_list:
-                        if t not in latest_targets[symbol]:
-                            latest_targets[symbol].append(t)
-            self.targets = latest_targets
-    
-        # Step 3: Save updated targets.json
         with open(self.targets_file, "w") as f:
             json.dump(self.targets, f, indent=4)
-    
-        # Step 4: Push to Git
         self._commit_and_push("Updated targets.json")
-
 
     def _commit_and_push(self, message):
         os.chdir(self.repo_path)
-    
-        print("\n--- DEBUG: Git Commit & Push START ---")
-    
-        # Config email and name
-        cmd = f'git config user.email "{self.email}"'
-        print(f"Running: {cmd}")
-        os.system(cmd)
-    
-        cmd = f'git config user.name "{self.name}"'
-        print(f"Running: {cmd}")
-        os.system(cmd)
-    
-        # Pull latest
-        cmd = "git pull origin main --rebase --autostash"
-        print(f"Running: {cmd}")
-        os.system(cmd)
-    
-        # Stage
-        cmd = "git add targets.json"
-        print(f"Running: {cmd}")
-        os.system(cmd)
-    
-        # Commit
-        cmd = f'git commit -m "{message}"'
-        print(f"Running: {cmd}")
-        os.system(f'{cmd} || echo "No changes to commit"')
-    
-        # Status check
-        print("Running: git status")
-        os.system("git status")
-    
-        # Push
-        cmd = "git push origin main"
-        print(f"Running: {cmd}")
-        os.system(cmd)
-    
-        print("--- DEBUG: Git Commit & Push END ---\n")
-    
+        os.system(f'git config --global user.email "{self.email}"')
+        os.system(f'git config --global user.name "{self.name}"')
+        os.system("git add targets.json")
+        os.system(f'git commit -m "{message}" || echo "No changes to commit"')
+        os.system("git pull origin main --rebase --autostash || true")  # Ensure no conflict
+        os.system("git push origin main")
         os.chdir("/content")
-    
 
     def update_symbols(self):
         url = "https://public.fyers.in/sym_details/NSE_CM.csv"
@@ -364,13 +308,11 @@ class AlertManager:
             for target in price_list:
                 diff = abs((cmp - target["price"]) / target["price"]) * 100
                 if diff <= tolerance:
-                    print(f"Target hit & removed: {symbol} @ {target['price']}")
                     comment = target.get("comment", "").lower()
                     buy_symbol = symbol if "buy" in comment else ""
                     sell_symbol = symbol if "sell" in comment else ""
                     other_symbol = symbol if (buy_symbol == "" and sell_symbol == "") else ""
                     alert_rows.append([current_date, buy_symbol, sell_symbol, other_symbol])
-                    print("Remaining Targets after check:", json.dumps(updated_targets, indent=4))
                 else:
                     remaining_prices.append(target)
             if remaining_prices:
