@@ -10,5 +10,12 @@
             "comment": "sell",
             "triggered": false
         }
+    ],
+    "NSE:ADANIENT-EQ": [
+        {
+            "price": 2538.7,
+            "comment": "BUY",
+            "triggered": false
+        }
     ]
 }
