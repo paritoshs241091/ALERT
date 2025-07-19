@@ -283,13 +283,46 @@ class AlertManager:
 
     def _commit_and_push(self, message):
         os.chdir(self.repo_path)
-        os.system(f'git config --global user.email "{self.email}"')
-        os.system(f'git config --global user.name "{self.name}"')
-        os.system("git pull origin main --rebase --autostash || true")
-        os.system("git add targets.json")
-        os.system(f'git commit -m "{message}" || echo "No changes to commit"')
-        os.system("git push origin main")
+    
+        print("\n--- DEBUG: Git Commit & Push START ---")
+    
+        # Config email and name
+        cmd = f'git config user.email "{self.email}"'
+        print(f"Running: {cmd}")
+        os.system(cmd)
+    
+        cmd = f'git config user.name "{self.name}"'
+        print(f"Running: {cmd}")
+        os.system(cmd)
+    
+        # Pull latest
+        cmd = "git pull origin main --rebase --autostash"
+        print(f"Running: {cmd}")
+        os.system(cmd)
+    
+        # Stage
+        cmd = "git add targets.json"
+        print(f"Running: {cmd}")
+        os.system(cmd)
+    
+        # Commit
+        cmd = f'git commit -m "{message}"'
+        print(f"Running: {cmd}")
+        os.system(f'{cmd} || echo "No changes to commit"')
+    
+        # Status check
+        print("Running: git status")
+        os.system("git status")
+    
+        # Push
+        cmd = "git push origin main"
+        print(f"Running: {cmd}")
+        os.system(cmd)
+    
+        print("--- DEBUG: Git Commit & Push END ---\n")
+    
         os.chdir("/content")
+    
 
     def update_symbols(self):
         url = "https://public.fyers.in/sym_details/NSE_CM.csv"
