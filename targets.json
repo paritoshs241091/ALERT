@@ -154,5 +154,12 @@
             "comment": "BUY",
             "triggered": false
         }
+    ],
+    "NSE:SHRIRAMFIN-EQ": [
+        {
+            "price": 638.4,
+            "comment": "buy",
+            "triggered": false
+        }
     ]
 }
