@@ -266,6 +266,7 @@ class AlertManager:
         os.chdir(self.repo_path)
         os.system("git pull origin main --rebase --autostash || true")
         os.chdir("/content")
+    
         # Step 2: Merge current targets with latest targets.json
         if os.path.exists(self.targets_file):
             with open(self.targets_file, "r") as f:
@@ -279,6 +280,13 @@ class AlertManager:
                         if t not in latest_targets[symbol]:
                             latest_targets[symbol].append(t)
             self.targets = latest_targets
+    
+        # Step 3: Save updated targets.json
+        with open(self.targets_file, "w") as f:
+            json.dump(self.targets, f, indent=4)
+    
+        # Step 4: Push to Git
+        self._commit_and_push("Updated targets.json")
 
 
     def _commit_and_push(self, message):
