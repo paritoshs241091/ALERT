@@ -213,8 +213,8 @@ def my_code_60():
                 df['date'] = pd.to_datetime(df['date'], unit='s').dt.tz_localize('UTC').dt.tz_convert('Asia/Kolkata')
                 df['date'] = df['date'].dt.tz_localize(None)
                 cmp_data[symbol] = float(df['low'].iloc[-1])
-                print(symbol)
-                print(df['low'].iloc[-1])
+                #print(symbol)
+                #print(df['low'].iloc[-1])
             else:
                 continue
         except IndexError as e:
@@ -243,10 +243,10 @@ class AlertManager:
 
     def _setup_repo(self):
         if os.path.exists(self.github_repo):
-            os.system(f"cd {self.github_repo} && git fetch origin && git rebase origin/main || true")
+            os.system(f"cd {self.github_repo} && git fetch origin && git rebase origin/main || true > /dev/null 2>&1")
         else:
-            os.system(f"git clone {self.repo_url}")
-        os.system(f"cd {self.github_repo} && git remote set-url origin {self.repo_url}")
+            os.system(f"git clone {self.repo_url} > /dev/null 2>&1")
+        os.system(f"cd {self.github_repo} && git remote set-url origin {self.repo_url} > /dev/null 2>&1")
 
     def _load_symbols(self):
         if not os.path.exists(self.symbols_file):
