@@ -5,12 +5,5 @@
             "comment": "buy",
             "triggered": false
         }
-    ],
-    "NSE:ASTRAL-EQ": [
-        {
-            "price": 3190,
-            "comment": "hehe",
-            "triggered": false
-        }
     ]
 }
