@@ -118,11 +118,6 @@
     ],
     "NSE:EMULTIMQ-EQ": [
         {
-            "price": 5395,
-            "comment": "sell",
-            "triggered": false
-        },
-        {
             "price": 5443.5,
             "comment": "sell",
             "triggered": false
@@ -130,11 +125,6 @@
         {
             "price": 5511,
             "comment": "sell",
-            "triggered": false
-        },
-        {
-            "price": 5395,
-            "comment": "",
             "triggered": false
         },
         {
@@ -155,11 +145,6 @@
             "triggered": false
         },
         {
-            "price": 5395,
-            "comment": "sell",
-            "triggered": false
-        },
-        {
             "price": 5443.5,
             "comment": "sell",
             "triggered": false
@@ -167,11 +152,6 @@
         {
             "price": 5511,
             "comment": "sell",
-            "triggered": false
-        },
-        {
-            "price": 5395,
-            "comment": "",
             "triggered": false
         },
         {
