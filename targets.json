@@ -171,6 +171,11 @@
             "price": 5443.5,
             "comment": "",
             "triggered": false
+        },
+        {
+            "price": 5511,
+            "comment": "",
+            "triggered": false
         }
     ],
     "NSE:LTIM-EQ": [
@@ -221,6 +226,11 @@
         },
         {
             "price": 5443.5,
+            "comment": "",
+            "triggered": false
+        },
+        {
+            "price": 5511,
             "comment": "",
             "triggered": false
         }
