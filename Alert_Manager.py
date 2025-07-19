@@ -343,7 +343,7 @@ class AlertManager:
 manager = AlertManager(
     github_user="paritoshs241091",
     github_repo="ALERT",
-    github_token="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",
+    github_token="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",
     email="you@example.com",
     name="Your Name"
 )
