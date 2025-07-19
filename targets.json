@@ -147,12 +147,5 @@
             "comment": "sell",
             "triggered": false
         }
-    ],
-    "NSE:EMULTIMQ-EQ": [
-        {
-            "price": 5059,
-            "comment": "BUY",
-            "triggered": false
-        }
     ]
 }
