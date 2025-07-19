@@ -28,6 +28,11 @@
             "price": 558,
             "comment": "sell",
             "triggered": false
+        },
+        {
+            "price": 1440,
+            "comment": "buy",
+            "triggered": false
         }
     ],
     "NSE:TCS-EQ": [
