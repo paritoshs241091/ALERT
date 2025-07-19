@@ -211,6 +211,7 @@ def my_code_60():
                 df['date'] = pd.to_datetime(df['date'], unit='s').dt.tz_localize('UTC').dt.tz_convert('Asia/Kolkata')
                 df['date'] = df['date'].dt.tz_localize(None)
                 cmp_data[symbol] = float(df['low'].iloc[-1])
+                print(symbol)
             else:
                 continue
         except IndexError as e:
