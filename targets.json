@@ -53,5 +53,12 @@
             "comment": "sell",
             "triggered": false
         }
+    ],
+    "NSE:HINDALCO-EQ": [
+        {
+            "price": 1474,
+            "comment": "buy",
+            "triggered": false
+        }
     ]
 }
