@@ -212,6 +212,7 @@ def my_code_60():
                 df['date'] = df['date'].dt.tz_localize(None)
                 cmp_data[symbol] = float(df['low'].iloc[-1])
                 print(symbol)
+                print(df['low'].iloc[-1])
             else:
                 continue
         except IndexError as e:
