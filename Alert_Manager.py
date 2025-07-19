@@ -271,7 +271,8 @@ class AlertManager:
         os.system(f'git config --global user.name "{self.name}"')
         os.system("git add targets.json")
         os.system(f'git commit -m "{message}" || echo "No changes to commit"')
-        os.system(f"git push {self.repo_url} HEAD:main")
+        os.system("git pull origin main --rebase || true")  # Ensure no conflict
+        os.system("git push origin main")
         os.chdir("/content")
 
     def update_symbols(self):
