@@ -116,32 +116,10 @@
             "triggered": false
         }
     ],
-    "NSE:EMULTIMQ-EQ": [
-        {
-            "price": 5511,
-            "comment": "sell",
-            "triggered": false
-        },
-        {
-            "price": 5511,
-            "comment": "",
-            "triggered": false
-        }
-    ],
     "NSE:LTIM-EQ": [
         {
             "price": 5059,
             "comment": "BUY",
-            "triggered": false
-        },
-        {
-            "price": 5511,
-            "comment": "sell",
-            "triggered": false
-        },
-        {
-            "price": 5511,
-            "comment": "",
             "triggered": false
         }
     ]
