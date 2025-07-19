@@ -268,12 +268,12 @@ class AlertManager:
 
     def _commit_and_push(self, message):
         os.chdir(self.repo_path)
-        os.system(f'git config --global user.email "{self.email}"')
-        os.system(f'git config --global user.name "{self.name}"')
-        os.system("git add targets.json")
-        os.system(f'git commit -m "{message}" || echo "No changes to commit"')
-        os.system("git pull origin main --rebase --autostash || true")  # Ensure no conflict
-        os.system("git push origin main")
+        os.system(f'git config --global user.email "{self.email}" > /dev/null 2>&1')
+        os.system(f'git config --global user.name "{self.name}" > /dev/null 2>&1')
+        os.system("git add targets.json > /dev/null 2>&1")
+        os.system(f'git commit -m "{message}" || echo "No changes to commit" > /dev/null 2>&1')
+        os.system("git pull origin main --rebase --autostash || true > /dev/null 2>&1")  # Ensure no conflict
+        os.system("git push origin main > /dev/null 2>&1")
         os.chdir("/content")
 
     def update_symbols(self):
@@ -292,7 +292,7 @@ class AlertManager:
             print("Failed to fetch symbols:", response.status_code)
 
     def check_alerts_with_cmp(self, cmp_data, tolerance=0.08):
-        print("\n--- Checking Alerts with External CMP ---")
+        #print("\n--- Checking Alerts with External CMP ---")
         updated_targets = {}
         alert_rows = []
         current_date = dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
