@@ -25,21 +25,11 @@
             "price": 1474,
             "comment": "buy",
             "triggered": false
-        },
-        {
-            "price": 3189,
-            "comment": "buy",
-            "triggered": false
         }
     ],
     "NSE:ASTRAL-EQ": [
         {
             "price": 3190,
-            "comment": "hehe",
-            "triggered": false
-        },
-        {
-            "price": 1510,
             "comment": "hehe",
             "triggered": false
         }
