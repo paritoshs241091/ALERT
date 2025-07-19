@@ -1,11 +1,4 @@
 {
-    "NSE:WIPRO-EQ": [
-        {
-            "price": 500.35,
-            "comment": "sell",
-            "triggered": false
-        }
-    ],
     "NSE:ADANIENT-EQ": [
         {
             "price": 2538.7,
