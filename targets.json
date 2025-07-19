@@ -32,5 +32,12 @@
             "comment": "sell",
             "triggered": false
         }
+    ],
+    "NSE:WIPRO-EQ": [
+        {
+            "price": 1474,
+            "comment": "buy",
+            "triggered": false
+        }
     ]
 }
