@@ -18,5 +18,11 @@
             "price": 250.2,
             "comment": "sell"
         }
+    ],
+    "reliance": [
+        {
+            "price": 250.2,
+            "comment": "sell"
+        }
     ]
 }
