@@ -37,22 +37,12 @@
     ],
     "NSE:AXISBANK-EQ": [
         {
-            "price": 1070,
-            "comment": "BUY",
-            "triggered": false
-        },
-        {
             "price": 1041,
             "comment": "BUY",
             "triggered": false
         }
     ],
     "NSE:AXISBNKETF-EQ": [
-        {
-            "price": 1070,
-            "comment": "BUY",
-            "triggered": false
-        },
         {
             "price": 1041,
             "comment": "BUY",
@@ -61,22 +51,12 @@
     ],
     "NSE:AXISBPSETF-EQ": [
         {
-            "price": 1070,
-            "comment": "BUY",
-            "triggered": false
-        },
-        {
             "price": 1041,
             "comment": "BUY",
             "triggered": false
         }
     ],
     "NSE:AXISCETF-EQ": [
-        {
-            "price": 1070,
-            "comment": "BUY",
-            "triggered": false
-        },
         {
             "price": 1041,
             "comment": "BUY",
@@ -85,22 +65,12 @@
     ],
     "NSE:AXISGOLD-EQ": [
         {
-            "price": 1070,
-            "comment": "BUY",
-            "triggered": false
-        },
-        {
             "price": 1041,
             "comment": "BUY",
             "triggered": false
         }
     ],
     "NSE:AXISHCETF-EQ": [
-        {
-            "price": 1070,
-            "comment": "BUY",
-            "triggered": false
-        },
         {
             "price": 1041,
             "comment": "BUY",
@@ -109,22 +79,12 @@
     ],
     "NSE:AXISILVER-EQ": [
         {
-            "price": 1070,
-            "comment": "BUY",
-            "triggered": false
-        },
-        {
             "price": 1041,
             "comment": "BUY",
             "triggered": false
         }
     ],
     "NSE:AXISNIFTY-EQ": [
-        {
-            "price": 1070,
-            "comment": "BUY",
-            "triggered": false
-        },
         {
             "price": 1041,
             "comment": "BUY",
@@ -133,22 +93,12 @@
     ],
     "NSE:AXISTECETF-EQ": [
         {
-            "price": 1070,
-            "comment": "BUY",
-            "triggered": false
-        },
-        {
             "price": 1041,
             "comment": "BUY",
             "triggered": false
         }
     ],
     "NSE:AXISVALUE-EQ": [
-        {
-            "price": 1070,
-            "comment": "BUY",
-            "triggered": false
-        },
         {
             "price": 1041,
             "comment": "BUY",
