@@ -16,24 +16,12 @@
             "price": 1474,
             "comment": "buy",
             "triggered": false
-        },
-        {
-            "price": 1231.2,
-            "comment": "sell",
-            "triggered": false
         }
     ],
     "NSE:ASTRAL-EQ": [
         {
             "price": 3190,
             "comment": "hehe",
-            "triggered": false
-        }
-    ],
-    "NSE:WSTCSTPAPR-EQ": [
-        {
-            "price": 1231.2,
-            "comment": "sell",
             "triggered": false
         }
     ],
