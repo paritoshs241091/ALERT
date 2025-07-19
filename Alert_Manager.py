@@ -224,28 +224,29 @@ def my_code_60():
 
 
 class AlertManager:
-    def __init__(self, github_user, github_repo, github_token, email="you@example.com", name="Your Name"):
+    def __init__(self, github_user, github_repo, github_token=None, email="you@example.com", name="Your Name"):
         self.github_user = github_user
         self.github_repo = github_repo
-        self.github_token = github_token
-        self.repo_url = f"https://{github_user}:{github_token}@github.com/{github_user}/{github_repo}.git"
+        self.github_token = github_token.strip() or ""
+        if self.github_token:
+            self.repo_url = f"https://{github_user}:{self.github_token}@github.com/{github_user}/{github_repo}.git"
+        else:
+            self.repo_url = f"https://github.com/{github_user}/{github_repo}.git"
         self.email = email
         self.name = name
         self.repo_path = github_repo + "/"
         self.symbols_file = os.path.join(self.repo_path, "symbols.json")
         self.targets_file = os.path.join(self.repo_path, "targets.json")
-
         self._setup_repo()
         self.symbols = self._load_symbols()
         self.targets = self._load_targets()
 
     def _setup_repo(self):
-        # Public repo ke liye token ki zarurat nahi
-        self.repo_url = f"https://github.com/{self.github_user}/{self.github_repo}.git"       
         if os.path.exists(self.github_repo):
-            os.system(f"cd {self.github_repo} && git fetch origin && git rebase origin/main || git merge origin/main")
+            os.system(f"cd {self.github_repo} && git fetch origin && git rebase origin/main || true")
         else:
             os.system(f"git clone {self.repo_url}")
+        os.system(f"cd {self.github_repo} && git remote set-url origin {self.repo_url}")
 
     def _load_symbols(self):
         if not os.path.exists(self.symbols_file):
