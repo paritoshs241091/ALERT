@@ -99,6 +99,11 @@
             "price": 2185.4,
             "comment": "sell",
             "triggered": false
+        },
+        {
+            "price": 2171.3,
+            "comment": "sell",
+            "triggered": false
         }
     ]
 }
