@@ -272,7 +272,7 @@ class AlertManager:
         os.system(f'git config --global user.name "{self.name}"')
         os.system("git add targets.json")
         os.system(f'git commit -m "{message}" || echo "No changes to commit"')
-        os.system("git pull origin main --rebase || true")  # Ensure no conflict
+        os.system("git pull origin main --rebase --autostash || true")  # Ensure no conflict
         os.system("git push origin main")
         os.chdir("/content")
 
