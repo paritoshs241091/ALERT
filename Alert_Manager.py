@@ -182,14 +182,14 @@ def my_code_60():
     fyers = fyersModel.FyersModel(client_id=client_id, is_async=False, token=access_token, log_path="")
 
     # Define symbols
-	url = "https://raw.githubusercontent.com/paritoshs241091/ALERT/main/targets.json"
-	try:
-		response = requests.get(url)
-		response.raise_for_status()  # Will raise HTTPError for bad status
-		all_symbols = list(json.loads(response.text).keys())
-	except Exception as e:
-		print("Error fetching symbols:", e)
-		all_symbols = []
+    url = "https://raw.githubusercontent.com/paritoshs241091/ALERT/main/targets.json"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Will raise HTTPError for bad status
+        all_symbols = list(json.loads(response.text).keys())
+    except Exception as e:
+        print("Error fetching symbols:", e)
+        all_symbols = []
 
     start_time = now.replace(hour=9, minute=0, second=0, microsecond=0) - dt.timedelta(days=2)
     end_time = now
