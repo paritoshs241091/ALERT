@@ -12,12 +12,5 @@
             "comment": "hehe",
             "triggered": false
         }
-    ],
-    "NSE:ADANIPORTS-EQ": [
-        {
-            "price": 1441,
-            "comment": "buy",
-            "triggered": false
-        }
     ]
 }
