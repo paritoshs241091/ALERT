@@ -328,6 +328,7 @@ class AlertManager:
                     sell_symbol = symbol if "sell" in comment else ""
                     other_symbol = symbol if (buy_symbol == "" and sell_symbol == "") else ""
                     alert_rows.append([current_date, buy_symbol, sell_symbol, other_symbol])
+                    print("Remaining Targets after check:", json.dumps(updated_targets, indent=4))
                 else:
                     remaining_prices.append(target)
             if remaining_prices:
