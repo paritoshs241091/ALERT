@@ -171,5 +171,12 @@
             "comment": "sell",
             "triggered": false
         }
+    ],
+    "NSE:BHARTIARTL-EQ": [
+        {
+            "price": 2024,
+            "comment": "sell",
+            "triggered": false
+        }
     ]
 }
