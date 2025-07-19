@@ -39,5 +39,12 @@
             "comment": "buy",
             "triggered": false
         }
+    ],
+    "NSE:BHEL-EQ": [
+        {
+            "price": 3190,
+            "comment": "hehe",
+            "triggered": false
+        }
     ]
 }
