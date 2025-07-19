@@ -339,11 +339,11 @@ class AlertManager:
         )
         print("Telegram response:", resp.status_code)
 
-
+token = os.getenv("GITHUB_TOKEN")
 manager = AlertManager(
     github_user="paritoshs241091",
     github_repo="ALERT",
-    github_token="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",
+    github_token= token,
     email="you@example.com",
     name="Your Name"
 )
