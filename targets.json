@@ -22,5 +22,12 @@
             "comment": "BUY",
             "triggered": false
         }
+    ],
+    "NSE:ASIANPAINT-EQ": [
+        {
+            "price": 500.35,
+            "comment": "2375",
+            "triggered": false
+        }
     ]
 }
