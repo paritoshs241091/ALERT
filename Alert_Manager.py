@@ -323,6 +323,7 @@ class AlertManager:
             for target in price_list:
                 diff = abs((cmp - target["price"]) / target["price"]) * 100
                 if diff <= tolerance:
+                    print(f"Target hit & removed: {symbol} @ {target['price']}")
                     comment = target.get("comment", "").lower()
                     buy_symbol = symbol if "buy" in comment else ""
                     sell_symbol = symbol if "sell" in comment else ""
