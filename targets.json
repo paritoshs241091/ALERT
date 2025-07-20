@@ -236,5 +236,12 @@
             "comment": "sell",
             "triggered": false
         }
+    ],
+    "NSE:BAJFINANCE-EQ": [
+        {
+            "price": 925.35,
+            "comment": "BUY",
+            "triggered": false
+        }
     ]
 }
