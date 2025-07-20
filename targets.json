@@ -411,12 +411,5 @@
             "comment": "sell",
             "triggered": false
         }
-    ],
-    "NSE:M&MFIN-EQ": [
-        {
-            "price": 3217,
-            "comment": "sell",
-            "triggered": false
-        }
     ]
 }
