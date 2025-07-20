@@ -315,5 +315,12 @@
             "comment": "sell",
             "triggered": false
         }
+    ],
+    "NSE:ONGC-EQ": [
+        {
+            "price": 245.1,
+            "comment": "BUY",
+            "triggered": false
+        }
     ]
 }
