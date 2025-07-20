@@ -190,6 +190,11 @@
             "price": 247,
             "comment": "BUY",
             "triggered": false
+        },
+        {
+            "price": 242,
+            "comment": "BUY",
+            "triggered": false
         }
     ]
 }
