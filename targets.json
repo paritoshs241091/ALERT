@@ -262,6 +262,11 @@
             "price": 865,
             "comment": "BUY",
             "triggered": false
+        },
+        {
+            "price": 839,
+            "comment": "BUY",
+            "triggered": false
         }
     ]
 }
