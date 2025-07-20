@@ -384,5 +384,19 @@
             "comment": "sell",
             "triggered": false
         }
+    ],
+    "NSE:M&M-EQ": [
+        {
+            "price": 3109,
+            "comment": "BUY",
+            "triggered": false
+        }
+    ],
+    "NSE:M&MFIN-EQ": [
+        {
+            "price": 3109,
+            "comment": "BUY",
+            "triggered": false
+        }
     ]
 }
