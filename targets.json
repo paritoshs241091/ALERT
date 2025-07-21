@@ -508,5 +508,12 @@
             "comment": "SELL",
             "triggered": false
         }
+    ],
+    "NSE:BAJAJ-AUTO-EQ": [
+        {
+            "price": 8089,
+            "comment": "BUY",
+            "triggered": false
+        }
     ]
 }
