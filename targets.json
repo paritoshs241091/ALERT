@@ -385,6 +385,11 @@
             "price": 2978,
             "comment": "BUY",
             "triggered": false
+        },
+        {
+            "price": 3170,
+            "comment": "BUY",
+            "triggered": false
         }
     ],
     "NSE:NIFTY50ADD-EQ": [
@@ -418,6 +423,13 @@
         {
             "price": 2050,
             "comment": "sell",
+            "triggered": false
+        }
+    ],
+    "NSE:M&MFIN-EQ": [
+        {
+            "price": 3170,
+            "comment": "BUY",
             "triggered": false
         }
     ]
