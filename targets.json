@@ -33,6 +33,11 @@
             "price": 668.4,
             "comment": "sell",
             "triggered": false
+        },
+        {
+            "price": 640.7,
+            "comment": "BUY",
+            "triggered": false
         }
     ],
     "NSE:BHARTIARTL-EQ": [
