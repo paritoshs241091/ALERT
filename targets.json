@@ -650,6 +650,11 @@
             "price": 810,
             "comment": "BUY",
             "triggered": false
+        },
+        {
+            "price": 801.75,
+            "comment": "BUY",
+            "triggered": false
         }
     ]
 }
