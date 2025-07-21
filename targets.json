@@ -476,5 +476,12 @@
             "comment": "sell",
             "triggered": false
         }
+    ],
+    "NSE:LT-EQ": [
+        {
+            "price": 3324,
+            "comment": "BUY",
+            "triggered": false
+        }
     ]
 }
