@@ -393,5 +393,12 @@
             "comment": "sell",
             "triggered": false
         }
+    ],
+    "NSE:BAJAJFINSV-EQ": [
+        {
+            "price": 1981,
+            "comment": "BUY",
+            "triggered": false
+        }
     ]
 }
