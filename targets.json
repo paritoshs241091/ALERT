@@ -443,6 +443,11 @@
             "price": 73,
             "comment": "BUY",
             "triggered": false
+        },
+        {
+            "price": 69.8,
+            "comment": "BUY",
+            "triggered": false
         }
     ]
 }
