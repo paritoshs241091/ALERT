@@ -64,7 +64,8 @@ class AlertManager:
         if response.status_code == 200:
             df = pd.read_csv(StringIO(response.text), header=None)
             raw_symbols = df[9].dropna().tolist()
-            eq_symbols = sorted([f"NSE:{s}" for s in raw_symbols if s.endswith("-EQ")])
+            #*update1*#eq_symbols = sorted([f"NSE:{s}" for s in raw_symbols if s.endswith("-EQ")])
+            eq_symbols = sorted([f"NSE:{s}" for s in raw_symbols if s.endswith("-EQ") or s.endswith("-INDEX")])
             with open(self.symbols_file, "w") as f:
                 json.dump(eq_symbols, f, indent=4)
             self.symbols = eq_symbols
@@ -76,7 +77,8 @@ class AlertManager:
     # ----------------------- Target Management -----------------------
     def add_target(self, pattern, price, comment=""):
         # Find full NSE symbol name from pattern
-        matched = [s for s in self.symbols if re.search(pattern, s, re.IGNORECASE)]
+        #*update2*#matched = [s for s in self.symbols if re.search(pattern, s, re.IGNORECASE)]
+        matched = [s for s in self.symbols if re.search(rf"NSE:{pattern}-EQ$", s, re.IGNORECASE) or re.search(rf"NSE:{pattern}-INDEX$", s, re.IGNORECASE)]
         if not matched:
             print(f"No stock matched for pattern: {pattern}")
             return
