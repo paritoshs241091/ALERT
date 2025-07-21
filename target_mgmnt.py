@@ -101,7 +101,8 @@ class AlertManager:
         self._save_targets()
 
     def remove_target(self, pattern, price):
-        matched = [s for s in self.targets.keys() if re.search(pattern, s, re.IGNORECASE)]
+        #**#matched = [s for s in self.targets.keys() if re.search(pattern, s, re.IGNORECASE)]
+        matched = [s for s in self.targets if re.search(rf'^NSE:{re.escape(pattern)}-(EQ|INDEX)$', s, re.IGNORECASE)]
         if not matched:
             print(f"No stock matched for pattern: {pattern}")
             return
