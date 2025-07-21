@@ -534,6 +534,11 @@
             "price": 8618,
             "comment": "sell",
             "triggered": false
+        },
+        {
+            "price": 8741,
+            "comment": "sell",
+            "triggered": false
         }
     ]
 }
