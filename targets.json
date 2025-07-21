@@ -25,11 +25,6 @@
     ],
     "NSE:SHRIRAMFIN-EQ": [
         {
-            "price": 638.4,
-            "comment": "buy",
-            "triggered": false
-        },
-        {
             "price": 687.4,
             "comment": "sell",
             "triggered": false
@@ -317,11 +312,6 @@
         }
     ],
     "NSE:ONGC-EQ": [
-        {
-            "price": 245.1,
-            "comment": "BUY",
-            "triggered": false
-        },
         {
             "price": 237.4,
             "comment": "BUY",
