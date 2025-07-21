@@ -386,5 +386,12 @@
             "comment": "BUY",
             "triggered": false
         }
+    ],
+    "NSE:NIFTY50ADD-EQ": [
+        {
+            "price": 25060,
+            "comment": "sell",
+            "triggered": false
+        }
     ]
 }
