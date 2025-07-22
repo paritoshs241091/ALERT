@@ -678,5 +678,12 @@
             "comment": "BUY",
             "triggered": false
         }
+    ],
+    "NSE:IEX-EQ": [
+        {
+            "price": 187.5,
+            "comment": "BUY",
+            "triggered": false
+        }
     ]
 }
