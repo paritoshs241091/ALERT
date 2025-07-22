@@ -749,6 +749,11 @@
             "price": 204,
             "comment": "sell",
             "triggered": false
+        },
+        {
+            "price": 198.6,
+            "comment": "sell",
+            "triggered": false
         }
     ],
     "NSE:COALINDIA-EQ": [
