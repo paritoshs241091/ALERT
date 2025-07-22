@@ -576,6 +576,11 @@
             "price": 738.8,
             "comment": "sell",
             "triggered": false
+        },
+        {
+            "price": 673,
+            "comment": "buy",
+            "triggered": false
         }
     ],
     "NSE:RELIANCE-EQ": [
