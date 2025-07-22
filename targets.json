@@ -574,6 +574,11 @@
             "price": 8404,
             "comment": "sell",
             "triggered": false
+        },
+        {
+            "price": 8406,
+            "comment": "sell",
+            "triggered": false
         }
     ],
     "NSE:TATAMOTORS-EQ": [
