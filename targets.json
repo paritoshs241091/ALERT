@@ -618,6 +618,11 @@
             "price": 1474.8,
             "comment": "sell",
             "triggered": false
+        },
+        {
+            "price": 1417,
+            "comment": "buy",
+            "triggered": false
         }
     ],
     "NSE:INDUSINDBK-EQ": [
