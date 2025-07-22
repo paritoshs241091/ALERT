@@ -277,11 +277,6 @@
             "price": 962,
             "comment": "sell",
             "triggered": false
-        },
-        {
-            "price": 949,
-            "comment": "sell",
-            "triggered": false
         }
     ],
     "NSE:TATASTEEL-EQ": [
@@ -533,11 +528,6 @@
         {
             "price": 7656,
             "comment": "BUY",
-            "triggered": false
-        },
-        {
-            "price": 8462,
-            "comment": "sell",
             "triggered": false
         },
         {
