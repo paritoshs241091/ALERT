@@ -450,11 +450,6 @@
     ],
     "NSE:IDFCFIRSTB-EQ": [
         {
-            "price": 73.35,
-            "comment": "BUY",
-            "triggered": false
-        },
-        {
             "price": 73,
             "comment": "BUY",
             "triggered": false
