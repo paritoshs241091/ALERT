@@ -444,6 +444,11 @@
             "price": 2050,
             "comment": "sell",
             "triggered": false
+        },
+        {
+            "price": 2018,
+            "comment": "buy",
+            "triggered": false
         }
     ],
     "NSE:M&MFIN-EQ": [
