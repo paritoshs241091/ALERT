@@ -687,5 +687,12 @@
             "comment": "sell",
             "triggered": false
         }
+    ],
+    "NSE:MARUTI-EQ": [
+        {
+            "price": 12137,
+            "comment": "buy",
+            "triggered": false
+        }
     ]
 }
