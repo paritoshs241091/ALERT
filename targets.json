@@ -468,6 +468,11 @@
             "price": 72.6,
             "comment": "buy",
             "triggered": false
+        },
+        {
+            "price": 71.75,
+            "comment": "buy",
+            "triggered": false
         }
     ],
     "NSE:ICICIBANK-EQ": [
