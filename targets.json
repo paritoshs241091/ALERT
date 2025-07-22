@@ -770,6 +770,11 @@
             "price": 1422,
             "comment": "buy",
             "triggered": false
+        },
+        {
+            "price": 1442,
+            "comment": "SELL",
+            "triggered": false
         }
     ]
 }
