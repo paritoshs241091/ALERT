@@ -700,6 +700,11 @@
             "price": 995,
             "comment": "sell",
             "triggered": false
+        },
+        {
+            "price": 882,
+            "comment": "sell",
+            "triggered": false
         }
     ],
     "NSE:DLF-EQ": [
