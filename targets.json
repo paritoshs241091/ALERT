@@ -340,11 +340,6 @@
     ],
     "NSE:NESTLEIND-EQ": [
         {
-            "price": 2438,
-            "comment": "BUY",
-            "triggered": false
-        },
-        {
             "price": 2412,
             "comment": "BUY",
             "triggered": false
