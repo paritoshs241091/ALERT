@@ -40,11 +40,6 @@
             "triggered": false
         },
         {
-            "price": 640.3,
-            "comment": "buy",
-            "triggered": false
-        },
-        {
             "price": 655.5,
             "comment": "sell",
             "triggered": false
